@@ -1,0 +1,14 @@
+.header{
+    background-color:#C6C6C6;
+    text-align: right;
+    border-bottom: 3px solid black;
+}
+.logo{
+    height: 1cm;
+    weight: 3cm;
+    float: Left;
+}
+.easychat{
+    font-size: 1cm;
+    font-family: arial;
+}
