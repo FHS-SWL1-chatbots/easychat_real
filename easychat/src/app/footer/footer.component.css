@@ -1,4 +1,9 @@
 .footer{
+    position: absolute;
+    top: 90%;
+    left: 20%;
+    right: 20%;
+    min-height: 100px;
     background-color: #ffffff;
     text-align: center;
     border-top: 3px solid black;
