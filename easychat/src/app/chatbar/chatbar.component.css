@@ -1,15 +1,6 @@
 #ausgabe {
-    border: 1px solid black;
     margin: 5px;
-    width: 30px;
-    height: 30px;
 }
 #eingabe {
-    border: 2px solid black;
     margin: 5px;
-    height: 30px;
-    width: 30px;
-}
-.div {
-    display: inline;
 }
