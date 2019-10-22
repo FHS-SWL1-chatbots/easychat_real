@@ -6,6 +6,7 @@
 }
 #eingabe {
     border: 2px solid blue;
+    margin: 5px;
     height: 30px;
     width: 30px;
 }
