@@ -1,6 +1,10 @@
 #ausgabe {
     margin: 5px;
+    position: relative;
+    left: 2%;
 }
 #eingabe {
     margin: 5px;
+    position: relative;
+    left: 2%;
 }
