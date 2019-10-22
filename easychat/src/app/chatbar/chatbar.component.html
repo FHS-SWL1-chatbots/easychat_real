@@ -1,37 +1,4 @@
 <!DOCTYPE html>
 <p>chatbar works!</p>
-<div class="message-container">
-    <message-list></message-list>
-    <message-form></message-form>
-  </div>
-
-  <div class="message-form">
-    <form ng-submit="sendMessage()" class="container">
-      <div class="row">
-        <div class="input-field col s10">
-          <i class="prefix mdi-communication-chat"></i>
-          <input ng-model="messageContent" type="text" placeholder="Type your message" >
-          <span class="chip left">
-             <user-avatar uuid="{{uuid}}"></user-avatar>
-             Anonymous robot #{{uuid}}
-          </span>
-        </div>
-        <div class="input-field col s2">
-          <button type="submit" class="waves-effect waves-light btn-floating btn-large">
-            <i class="mdi-content-send"></i>
-          </button>
-        </div>
-      </div>
-     </form>
-   </div>
-
-   <user-avatar uuid="{{senderUuid}}"></user-avatar>
-<span class="title">Anonymous robot #{{ senderUuid }}</span>
-<p><i class="prefix mdi-action-alarm"></i> {{ date | date:"MM/dd/yyyy 'at' h:mma"}}</p>
-<p>{{ content }}</p>
-
-<ul class="message-list collection">
-    <li class="collection-item message-item avatar" ng-repeat="message in messages track by message.uuid">
-      <message-item id="{{message.uuid}}" content="{{message.content}}" sender-uuid="{{message.sender_uuid}}" date="{{message.date}}"></message-item>
-    </li>
-  </ul> 
+<script src="https://cdn.pubnub.com/pubnub-3.7.21.js"></script>
+<script src="https://cdn.pubnub.com/sdk/pubnub-angular/pubnub-angular-3.2.1.js"></script>
