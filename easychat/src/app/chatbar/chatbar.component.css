@@ -5,11 +5,8 @@
     height: 30px;
 }
 #eingabe {
-    border: 2px solid blue;
+    border: 2px solid black;
     margin: 5px;
     height: 30px;
     width: 30px;
-}
-button {
-    
 }
