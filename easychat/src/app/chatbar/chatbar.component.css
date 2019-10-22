@@ -1,2 +1,10 @@
-
+div.Ausgabefenster {
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+}
+div.Eingabefenster {
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
  
