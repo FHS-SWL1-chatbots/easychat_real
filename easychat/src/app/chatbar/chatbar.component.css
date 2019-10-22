@@ -1,9 +1,9 @@
-div.Ausgabefenster {
+#ausgabe {
     border: 1px solid black;
     width: 30px;
     height: 30px;
 }
-div.Eingabefenster {
+#eingabe {
     border: 1px solid blue;
     box-sizing: border-box;
 }
