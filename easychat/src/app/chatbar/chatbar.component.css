@@ -25,7 +25,7 @@ a {
     padding-bottom:25px;
     background: lightblue;
     width:504px;
-    border:1px solid lightblue; }
+    border:1px solid black; }
   
 #loginform { padding-top:18px; }
   
@@ -39,12 +39,12 @@ a {
     background:#fff;
     height:270px;
     width:430px;
-    border:1px solid lightblue;
+    border:1px solid black;
     overflow:auto; }
   
     #usermsg {
         width:395px;
-        border:1px solid lightblue;
+        border:1px solid black;
         position: relative;
         left: 35px;
      }
