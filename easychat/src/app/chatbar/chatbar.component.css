@@ -34,16 +34,19 @@ a {
     height:270px;
     width:430px;
     border:1px solid black;
+    border-radius: 10px;
     overflow:auto; }
   
     #usermsg {
         width:395px;
         border:1px solid black;
+        border-radius: 10px;
         position: relative;
         left: 35px;
      }
     #submitmsg {
       position: relative;
+      border-radius: 10px;
     }
   
 #submit { width: 60px; }
