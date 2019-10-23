@@ -1,14 +1,17 @@
 .header{
     background-color: lightblue;
-    text-align: right;
-    border-bottom: 3px solid black;
+    max-height: 80px;
+    border-bottom: 1px solid grey;
 }
 .logo{
-    height: 1cm;
-    width: 3cm;
-    float: Left;
+   max-height: 80px;
 }
 .easychat{
-    font-size: 1cm;
-    font-family: arial;
+   
+    text-align: right;
+}
+.easychat h1{
+    font-size: 30px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
 }
