@@ -17,7 +17,9 @@ a {
     padding-bottom:25px;
     background: lightblue;
     width:504px;
-    border:1px solid black; }
+    border:1px solid black; 
+    border-radius: 10px;
+}
   
 #loginform { padding-top:18px; }
   
