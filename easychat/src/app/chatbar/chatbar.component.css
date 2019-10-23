@@ -19,8 +19,10 @@ a {
     width:504px;
     border:1px solid black;
     height: 100%;
-}
     
+    border:1px solid black; 
+    border-radius: 10px;
+}
   
 #loginform { padding-top:18px; }
   
@@ -35,6 +37,7 @@ a {
     height:270px;
     width:430px;
     border:1px solid black;
+    border-radius: 10px;
     overflow:auto; }
   
     #usermsg {
@@ -45,6 +48,7 @@ a {
      }
     #submitmsg {
       position: relative;
+    
     }
   
 #submit { width: 60px; }
