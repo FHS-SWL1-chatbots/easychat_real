@@ -10,7 +10,7 @@
           </div>
            
           <form name="message" action="">
-              <input name="usermsg" [(ngModel)]='usermsg' type="text" required id="usermsg"   size="63" />
+              <input name="usermsg" [(ngModel)]='usermsg' maxlength="1000" minlength="1" type="text" required id="usermsg"  placeholder="Hier kannst du reinschreiben Bruder!" size="63" />
               <input name="submitmsg" [disabled]="!usermsg" type="submit"  id="submitmsg" value="Send" />
             </form>
       </div>
