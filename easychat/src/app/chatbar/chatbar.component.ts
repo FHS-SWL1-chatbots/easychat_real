@@ -9,12 +9,21 @@ export class ChatbarComponent implements OnInit {
 
   constructor() { }
 
+  message: string='';
+
+  get usermsg(): string{
+    return this.message;
+  }
+
   ngOnInit() {
   }
 
   @Output()
   usermsgchange = new EventEmitter<string>();
   @Input ()
-  usermsg: string;
+  set usermsg(value) {
+    this.message = value;
+    this.usermsgchange.emit(this.message);
+  }
 
 }
