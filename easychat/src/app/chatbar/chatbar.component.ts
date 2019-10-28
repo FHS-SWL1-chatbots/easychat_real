@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chatbar',
@@ -13,4 +13,7 @@ export class ChatbarComponent implements OnInit {
   }
 
 }
+@Input ()
+usermsg: string;
+
 
