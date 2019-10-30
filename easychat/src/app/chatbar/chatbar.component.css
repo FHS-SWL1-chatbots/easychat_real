@@ -65,8 +65,8 @@ a {
 #history {
     border: 1px solid black;
     position: absolute;
-    left: 20px;
-    top: 10%;
+    left: 40px;
+    top: 40px;
     width: 200px;
     height: 200px;
   }
