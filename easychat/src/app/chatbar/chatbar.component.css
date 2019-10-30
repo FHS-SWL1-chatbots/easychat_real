@@ -64,7 +64,7 @@ a {
 .msgln { margin:0 0 2px 0; }
 #history {
     border: 1px solid black;
-    position: relative;
+    position: absolute;
     left: 20px;
     top: 10%;
     width: 200px;
