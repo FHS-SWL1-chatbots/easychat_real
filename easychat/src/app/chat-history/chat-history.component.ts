@@ -11,6 +11,8 @@ export class ChatHistoryComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   @Input()
   chatHistory: string; // Hier kommt die History rein
+  
 }

@@ -6,31 +6,38 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./chatbar.component.css']
 })
 export class ChatbarComponent implements OnInit {
-
+  ngOnInit() {
+  }
   constructor() { }
 
-  usermsg:string = '';
+  chatText:string = '';
   postings = '';
   newline = "\n";
 
-  ngOnInit() {
+ 
+
+  get chatMessage(): string {
+    return this.chatText;
   }
 
-  get chatMessage(): string{
-    return this.usermsg;
-  }
   @Output()
   chatMessageChange = new EventEmitter<string>();
 
-  @Input ()
+  @Input()
   set chatMessage(value) {
-    this.usermsg = value;
-    this.chatMessageChange.emit(this.usermsg);
+    this.chatText = value;
+    this.chatMessageChange.emit(this.chatText);
   }
-  
-  sendMessage() {
-      this.postings=this.postings+this.usermsg+this.newline;
-      alert('Nachricht erfolgreich versendet! '+this.chatMessage);
-      this.chatMessage = this.postings;
+
+  mirror_text() {
+    // console.log("typed \n");
+    // Diese Funktion scheint es nicht zu brauchen. Das Spiegeln macht ngModel selbst
+  }
+
+  sendChat() {
+    this.postings=this.postings+this.chatText+this.newline;
+    alert('Nachricht erfolgreich versendet! '+this.chatMessage);
+    this.chatMessage = this.postings;
+    this.chatText = ''; // Hat keine Wirkung mehr
   }
 }
