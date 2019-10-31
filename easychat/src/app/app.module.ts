@@ -8,13 +8,15 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChatbarComponent } from './chatbar/chatbar.component';
 import { from } from 'rxjs';
+import { ChatHistoryComponent } from './chat-history/chat-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ChatbarComponent
+    ChatbarComponent,
+    ChatHistoryComponent
   ],
   imports: [
     BrowserModule,
