@@ -16,7 +16,7 @@ export class ChatHistoryComponent implements OnInit {
 
   saveMsg(value: String){
     this.msgs.push(value);
-    alert(this.msgs);
+    
   }
 
   

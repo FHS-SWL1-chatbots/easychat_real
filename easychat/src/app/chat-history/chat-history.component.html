@@ -5,7 +5,7 @@
     </div>
      
     <div id="chatbox">
-        <ul> 
-           <li *ngFor="let msg of msgs">Anonymous: {{msg}}</li>
+        <ul class="list-group">  
+           <li *ngFor="let msg of msgs" class="list-group-item"><strong>Anonymous:</strong> {{msg}}</li>
           </ul>
     </div>
