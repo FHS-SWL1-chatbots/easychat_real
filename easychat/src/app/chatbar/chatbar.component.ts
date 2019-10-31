@@ -26,10 +26,11 @@ export class ChatbarComponent implements OnInit {
   set usermsg(value) {
     this.chatmessage = value;
     this.usermsgchange.emit(this.chatmessage);
+  }
   
   sendMessage() {
       this.postings=this.postings+this.chatmessage+this.newline;
       alert('Nachricht erfolgreich versendet! '+this.usermsg);
       this.usermsg = this.postings;
   }
-}}
+}
