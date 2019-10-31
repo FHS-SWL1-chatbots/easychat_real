@@ -13,11 +13,5 @@
               <input name="usermsg" [(ngModel)]='usermsg' maxlength="1000" minlength="1" type="text" required id="usermsg"  placeholder="Hier kannst du reinschreiben Bruder!" size="63" />
               <input name="submitmsg" [disabled]="!usermsg" type="submit"  id="submitmsg" value="Send" />
             </form>
-      </div>
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-      <script>
-        var app = angular.module('myApp', []);
-        app.controller('myCtrl', function($scope) {
-            $scope.name = "John Doe";
-        });
-        </script>
+          </div>
+     
