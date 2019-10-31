@@ -11,8 +11,14 @@ export class ChatHistoryComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  public msgs: String[] = [];
+
+  saveMsg(value: String){
+    this.msgs.push(value);
+    alert(this.msgs);
+  }
+
   
-  @Input()
-  chatHistory: string; // Hier kommt die History rein
   
 }

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
+import { ChatHistoryComponent } from './chat-history/chat-history.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild(ChatHistoryComponent, {static:false})
+  private chatHistory: ChatHistoryComponent;
+
+  public recieveMsg($event){
+      this.chatHistory.saveMsg($event);
+      
+  }
   title = 'easychat';
 }
