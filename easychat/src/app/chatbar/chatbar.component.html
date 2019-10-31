@@ -7,6 +7,7 @@
            
           <div id="chatbox" ng-app="myApp" ng-controller="myCtrl">
             <p>Your message: {{usermsg}}</p>
+            <app-chat-history [(chatHistory)]="historyText"></app-chat-history>
           </div>
            
           <form name="message" action="">
