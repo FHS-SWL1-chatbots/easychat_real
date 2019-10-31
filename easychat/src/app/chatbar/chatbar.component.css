@@ -62,11 +62,3 @@ a {
 .logout { float:right; }
   
 .msgln { margin:0 0 2px 0; }
-#history {
-    border: 1px solid black;
-    position: absolute;
-    left: 18%;
-    top: 17.5%;
-    width: 200px;
-    height: 400px;
-  }

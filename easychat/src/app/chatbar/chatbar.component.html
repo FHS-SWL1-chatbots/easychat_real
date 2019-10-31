@@ -10,11 +10,7 @@
           </div>
            
           <form name="message" action="">
-              <input name="usermsg" [(ngModel)]='usermsg' onkeydown="enter()" maxlength="1000" minlength="1" type="text" required id="usermsg"  placeholder="Hier kannst du reinschreiben Bruder!" size="63" />
+              <textarea name="usermsg" [(ngModel)]='usermsg' (keydown.enter)="sendChat()"  maxlength="1000" minlength="1" type="text" required id="usermsg"  placeholder="Hier kannst du reinschreiben Bruder!" size="63" ></textarea>/>
               <input name="submitmsg" [disabled]="!usermsg" type="submit"  id="submitmsg" value="Send" />
             </form>
       </div> 
-<div id="history">
-  <form name="historyfield" action="get">
-  </form>
-</div>
