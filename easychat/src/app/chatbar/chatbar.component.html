@@ -5,13 +5,12 @@
               <div style="clear:both"></div>
           </div>
            
-          <div id="chatbox" ng-app="myApp" ng-controller="myCtrl">
-            <p>Your message: {{usermsg}}</p>
+          <div id="HistoryFeld">
             <app-chat-history [(chatHistory)]="historyText"></app-chat-history>
           </div>
            
           <form name="message" action="">
-              <textarea name="usermsg" [(ngModel)]='usermsg'  maxlength="1000" minlength="1" type="text" required id="usermsg"  placeholder="Hier kannst du reinschreiben Bruder!" size="63" (keyup.enter)="sendMessage()" ></textarea>/>
-              <input name="submitmsg" [disabled]="!usermsg" type="submit"  id="submitmsg" value="Send" (click)="sendMessage()" />
+              <input name="usermsg" [(ngModel)]='usermsg'  maxlength="1000" minlength="1" type="text" required id="usermsg"  placeholder="Hier kannst du reinschreiben Bruder!" size="63" (keyup.enter)="sendMessage()"/>
+              <input class="btn btn-secondary btn-large" name="submitmsg" [disabled]="!usermsg" type="submit"  id="submitmsg" value="Send" (click)="sendMessage()" />
             </form>
-      </div> 
+  </div> 

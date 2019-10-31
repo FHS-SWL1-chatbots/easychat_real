@@ -9,28 +9,28 @@ export class ChatbarComponent implements OnInit {
 
   constructor() { }
 
-  chatmessage:string = '';
+  usermsg:string = '';
   postings = '';
   newline = "\n";
 
   ngOnInit() {
   }
 
-  get usermsg(): string{
-    return this.chatmessage;
+  get chatMessage(): string{
+    return this.usermsg;
   }
   @Output()
-  usermsgchange = new EventEmitter<string>();
+  chatMessageChange = new EventEmitter<string>();
 
   @Input ()
-  set usermsg(value) {
-    this.chatmessage = value;
-    this.usermsgchange.emit(this.chatmessage);
+  set chatMessage(value) {
+    this.usermsg = value;
+    this.chatMessageChange.emit(this.usermsg);
   }
   
   sendMessage() {
-      this.postings=this.postings+this.chatmessage+this.newline;
-      alert('Nachricht erfolgreich versendet! '+this.usermsg);
-      this.usermsg = this.postings;
+      this.postings=this.postings+this.usermsg+this.newline;
+      alert('Nachricht erfolgreich versendet! '+this.chatMessage);
+      this.chatMessage = this.postings;
   }
 }
