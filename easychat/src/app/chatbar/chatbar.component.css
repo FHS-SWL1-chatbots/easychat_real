@@ -47,7 +47,9 @@ a {
         left: 35px;
      }
     #submitmsg {
-      position: relative;
+      float: right;
+      margin-right: 12px;
+
     
     }
   
