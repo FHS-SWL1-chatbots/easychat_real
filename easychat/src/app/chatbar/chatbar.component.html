@@ -10,7 +10,7 @@
           </div>
            
           <form name="message" action="">
-              <textarea name="usermsg" [(ngModel)]='usermsg' (keydown.enter)="sendChat()"  maxlength="1000" minlength="1" type="text" required id="usermsg"  placeholder="Hier kannst du reinschreiben Bruder!" size="63" ></textarea>/>
-              <input name="submitmsg" [disabled]="!usermsg" type="submit"  id="submitmsg" value="Send" />
+              <textarea name="usermsg" [(ngModel)]='usermsg'  maxlength="1000" minlength="1" type="text" required id="usermsg"  placeholder="Hier kannst du reinschreiben Bruder!" size="63" (keyup.enter)="sendMessage()" ></textarea>/>
+              <input name="submitmsg" [disabled]="!usermsg" type="submit"  id="submitmsg" value="Send" (click)="sendMessage()" />
             </form>
       </div> 

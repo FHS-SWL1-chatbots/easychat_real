@@ -9,7 +9,7 @@ export class ChatbarComponent implements OnInit {
 
   constructor() { }
 
-  chatmassage:string = '';
+  chatmessage:string = '';
   postings = '';
   newline = "\n";
 
@@ -17,18 +17,18 @@ export class ChatbarComponent implements OnInit {
   }
 
   get usermsg(): string{
-    return this.chatmassage;
+    return this.chatmessage;
   }
   @Output()
   usermsgchange = new EventEmitter<string>();
 
   @Input ()
   set usermsg(value) {
-    this.chatmassage = value;
-    this.usermsgchange.emit(this.chatmassage);
+    this.chatmessage = value;
+    this.usermsgchange.emit(this.chatmessage);
   
-  sendChat() {
-      this.postings=this.postings+this.chatmassage+this.newline;
+  sendMessage() {
+      this.postings=this.postings+this.chatmessage+this.newline;
       alert('Nachricht erfolgreich versendet! '+this.usermsg);
       this.usermsg = this.postings;
   }
