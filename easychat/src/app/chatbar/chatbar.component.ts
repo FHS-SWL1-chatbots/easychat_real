@@ -15,7 +15,7 @@ export class ChatbarComponent implements OnInit {
 
   sendMsg(): void{
     this.msgEvent.emit(this.chatMsg);
-    alert("Junge ist das dein Text? :   " + this.chatMsg);
+    alert("Your message :   " + this.chatMsg);
     this.chatMsg = '';
   }
 }
