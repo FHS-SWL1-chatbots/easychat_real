@@ -1,5 +1,5 @@
  <form name="message" action="">
               <p class="msgbefore">Your message: {{chatMsg}}</p>
               <textarea name="chatMsg" [(ngModel)]='chatMsg'  (keyup.enter)="sendMsg()"  maxlength="1000" minlength="1" type="text" required id="usermsg"  placeholder="Hier könnte deine Nachricht stehen." size="63" (keyup.enter)="sendMessage()" ng-pattern="/\S+/" ></textarea>/>
-              <input name="submitmsg" [disabled]="!chatMsg" type="submit"  id="submitmsg" value="Send" (click)="sendMsg()/>
+              <input name="submitmsg" [disabled]="!chatMsg" type="submit"  id="submitmsg" value="Send" (click)="sendMsg()"/>
 </form>
