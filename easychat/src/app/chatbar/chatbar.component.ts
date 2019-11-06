@@ -9,12 +9,16 @@ import { PersonService} from '../person.service';
 export class ChatbarComponent implements OnInit {
   ngOnInit() {
   }
-  constructor(public pService: PersonService) { }
+  constructor(public pService: PersonService) {
+
+
+   }
   public chatMsg: string;
 
   @Output() msgEvent = new EventEmitter<string>();
 
   sendMsg(): void{
+    this.pService.nickname = "Hello";
     this.msgEvent.emit(this.chatMsg);
     alert("Your message :   " + this.chatMsg);
     this.chatMsg = '';

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PersonService} from '../person.service';
 
 @Component({
   selector: 'app-chat-history',
@@ -7,16 +8,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChatHistoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public pService: PersonService) {
 
+
+  }
   ngOnInit() {
   }
 
   public msgs: String[] = [];
+  public benutzername: String = "";
 
   saveMsg(value: String){
     this.msgs.push(value);
-    
+    this.benutzername = this.pService.nickname;
   }
 
   
