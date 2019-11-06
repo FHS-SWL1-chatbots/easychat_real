@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { PersonService} from '../person.service';
 
 @Component({
   selector: 'app-chatbar',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ChatbarComponent implements OnInit {
   ngOnInit() {
   }
-  constructor() { }
+  constructor(public pService: PersonService) { }
   public chatMsg: string;
 
   @Output() msgEvent = new EventEmitter<string>();

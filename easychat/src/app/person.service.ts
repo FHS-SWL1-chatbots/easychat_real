@@ -9,6 +9,12 @@ export class PersonService {
 
   private myNickname: string = '';
 
-  
+  public get nickname(): string{
+    return this.myNickname;
+  }
+  public set nickname(value: string){
+    this.myNickname = value;
+  }
+
 
 }
