@@ -22,7 +22,5 @@ export class ChatHistoryComponent implements OnInit {
     this.msgs.push(value);
     this.benutzername = this.pService.nickname;
   }
-
-  
   
 }
