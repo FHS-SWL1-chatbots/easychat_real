@@ -21,7 +21,7 @@ export class ChatbarComponent implements OnInit {
 
   sendMsg(): void {
 
-
+    //"^([a-z]|[A-Z]|[ä,ö,ü,Ä,Ö,Ü,ç,è,é,à]|[0-9])#%&*$"
     if (this.username.match("^[a-zA-Z0-9._\-]{3,12}$")) {
       if (this.username != null) {
         this.inputDisabled = true;
