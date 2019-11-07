@@ -1,6 +1,6 @@
 <form name="message" action="">
     <p class="msgbefore">Your message: {{chatMsg}}</p>
-    <label class="msgbefore">Username:</label><input required name="username" [(ngModel)]='username' />
+    <label class="msgbefore">Username:</label><input  name="username" [(ngModel)]='username' required [disabled]="inputDisabled"/>
     <textarea name="chatMsg" [(ngModel)]='chatMsg' (keyup.enter)="sendMsg()" maxlength="1000" minlength="1" type="text"
         required id="usermsg" placeholder="Hier könnte deine Nachricht stehen." size="63" (keyup.enter)="sendMessage()"
         ng-pattern="/\S+/"></textarea>/>

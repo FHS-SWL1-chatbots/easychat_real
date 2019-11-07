@@ -15,6 +15,7 @@ export class ChatbarComponent implements OnInit {
    }
   public chatMsg: string;
   public username: string;
+  public inputDisabled: boolean = false;
 
   @Output() msgEvent = new EventEmitter<string>();
 
@@ -25,5 +26,10 @@ export class ChatbarComponent implements OnInit {
     this.chatMsg = '';
     this.chatMsg = this.chatMsg.trim();
     this.chatMsg.match("/\s/");
+
+    if(this.username != null){
+      this.inputDisabled = true;
+    }
+
   }
 }
