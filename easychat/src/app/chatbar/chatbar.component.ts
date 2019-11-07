@@ -24,6 +24,7 @@ export class ChatbarComponent implements OnInit {
     alert("Your message :   " + this.chatMsg);
     this.chatMsg = '';
     this.chatMsg = this.chatMsg.trim();
-    this.chatMsg.match("/\s/");
+    this.chatMsg.match("^/\s/$");
+    this.username.match("^([a-z]|[A-Z]|[ä,ö,ü,Ä,Ö,Ü,ç,è,é,à]|[0-9])#%&*$");
   }
 }
