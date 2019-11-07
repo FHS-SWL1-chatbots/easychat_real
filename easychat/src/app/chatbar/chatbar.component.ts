@@ -14,11 +14,12 @@ export class ChatbarComponent implements OnInit {
 
    }
   public chatMsg: string;
+  public username: string;
 
   @Output() msgEvent = new EventEmitter<string>();
 
   sendMsg(): void{
-    this.pService.nickname = "Hello";
+    this.pService.nickname = this.username;
     this.msgEvent.emit(this.chatMsg);
     alert("Your message :   " + this.chatMsg);
     this.chatMsg = '';
