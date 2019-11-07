@@ -22,7 +22,6 @@ export class ChatbarComponent implements OnInit {
   sendMsg(): void{
     this.pService.nickname = this.username;
     this.msgEvent.emit(this.chatMsg);
-    alert("Your message :   " + this.chatMsg);
     this.chatMsg = '';
     this.chatMsg = this.chatMsg.trim();
     this.chatMsg.match("/\s/");
