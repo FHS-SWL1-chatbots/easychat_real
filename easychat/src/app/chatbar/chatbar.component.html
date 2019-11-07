@@ -1,5 +1,4 @@
 <form name="message" action="">
-    <p class="msgbefore">Your message: {{chatMsg}}</p>
     <label [hidden]="inputDisabled" class="msgbefore">Username:</label><input [hidden]="inputDisabled"  name="username" [(ngModel)]='username' maxlength="12" minlength="3" [disabled]="inputDisabled"/>
     <textarea name="chatMsg" [(ngModel)]='chatMsg' (keyup.enter)="sendMsg()" maxlength="1000" minlength="1" type="text"
         id="usermsg" placeholder="Hier könnte deine Nachricht stehen." size="63" (keyup.enter)="sendMessage()"
