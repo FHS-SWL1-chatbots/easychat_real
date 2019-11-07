@@ -23,5 +23,7 @@ export class ChatbarComponent implements OnInit {
     this.msgEvent.emit(this.chatMsg);
     alert("Your message :   " + this.chatMsg);
     this.chatMsg = '';
+    this.chatMsg = this.chatMsg.trim();
+    this.chatMsg.match("/\s/");
   }
 }
