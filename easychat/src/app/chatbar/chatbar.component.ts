@@ -27,6 +27,7 @@ export class ChatbarComponent implements OnInit {
         this.inputDisabled = true;
       }
       this.pService.nickname = this.username;
+      this.pService.color = this.getRandomColor();
       this.msgEvent.emit(this.chatMsg);
       this.chatMsg = '';
       this.chatMsg = this.chatMsg.trim();
@@ -35,5 +36,9 @@ export class ChatbarComponent implements OnInit {
       alert("Dieser Nutzername ist nicht erlaubt!");
     }
 
+  }
+  getRandomColor() {
+    var color = Math.floor(0x1000000 * Math.random()).toString(16);
+    return '#' + ('000000' + color).slice(-6);
   }
 }
