@@ -4,7 +4,7 @@
 </div>
 
 <div id="chatbox" #runter [scrollTop]="runter.scrollHeight">
-    <ul class="list-group">
-        <li *ngFor="let msg of msgs" class="list-group-item"><strong>{{benutzername}}:</strong><br/> {{msg}}</li>
+    <ul class="list-group" >
+        <li *ngFor="let msg of msgs" class="list-group-item"><p [ngStyle]="colorLi"><strong>{{benutzername}}:</strong></p> {{msg}}</li>
     </ul>
 </div>

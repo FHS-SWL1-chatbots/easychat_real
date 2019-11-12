@@ -17,13 +17,13 @@ export class ChatHistoryComponent implements OnInit {
 
   public msgs: String[] = [];
   public benutzername: String = "";
-  public color: String ="";
+  public colorLi: Object;
 
   saveMsg(value: String){
     this.msgs.push(value);
     this.benutzername = this.pService.nickname;
-    this.color = "color:'"+ this.pService.color+"'";
-    alert(this.color);
+    this.colorLi = {"color": this.pService.colorName};
+    alert(this.colorLi);
   }
   
 }

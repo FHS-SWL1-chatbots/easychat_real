@@ -23,11 +23,13 @@ export class ChatbarComponent implements OnInit {
 
     //"^([a-z]|[A-Z]|[ä,ö,ü,Ä,Ö,Ü,ç,è,é,à]|[0-9])#%&*$"
     if (this.username.match("^[a-zA-Z0-9._\-]{3,12}$")) {
+      if(this.inputDisabled != true){
+        this.pService.colorName = this.getRandomColor()
+      }
       if (this.username != null) {
         this.inputDisabled = true;
+        this.pService.nickname = this.username;
       }
-      this.pService.nickname = this.username;
-      this.pService.color = this.getRandomColor();
       this.msgEvent.emit(this.chatMsg);
       this.chatMsg = '';
       this.chatMsg = this.chatMsg.trim();

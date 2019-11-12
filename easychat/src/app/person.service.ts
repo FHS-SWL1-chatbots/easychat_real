@@ -17,10 +17,10 @@ export class PersonService {
   public set nickname(value: string){
     this.myNickname = value;
   }
-  public get color(): string{
+  public get colorName(): string{
     return this.nicknameColor;
   }
-  public set color(value: string){
+  public set colorName(value: string){
     this.nicknameColor = value;
   }
 
