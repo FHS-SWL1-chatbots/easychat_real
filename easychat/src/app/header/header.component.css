@@ -1,10 +1,13 @@
 .header{
-    background-color: lightblue;
-    max-height: 80px;
+    max-height: 120px;
+    background-color: #379A19;
     border-bottom: 1px solid grey;
 }
 .logo{
-   max-height: 80px;
+    position: relative;
+    height: 120px;
+    width: 300px;
+   
 }
 .easychat{
    
@@ -14,4 +17,8 @@
     font-size: 30px;
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
+    color: white;
+    position: relative;
+    top: 20%;
+    right: 5%;
 }

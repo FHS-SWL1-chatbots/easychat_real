@@ -1,11 +1,9 @@
 
-#wrapper, #loginform {
+#wrapper {
     position: relative;
-    top: 40px;
-    margin:0 auto;
+    top: 20%;
     padding-bottom:25px;
-    background: lightblue;
-    width:504px;
+    background: #379a19;
     border:1px solid black;
     height: 450px;
     

@@ -44,3 +44,6 @@ a {
     margin-right: 35px;
     height: 30px;
 }
+label.msgbefore {
+    color: white;
+}
