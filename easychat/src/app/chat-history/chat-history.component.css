@@ -1,33 +1,15 @@
-form, p, span {
-    margin:0;
-    padding:0; }
-  
-input { font:12px arial; }
-  
-a {
-    color: white    ;
-    text-decoration:none; }
-  
-    a:hover { text-decoration:underline; }
-  
-#wrapper, #loginform {
+
+#wrapper {
     position: relative;
-    top: 30%;
-    margin:0 auto;
+    top: 20%;
     padding-bottom:25px;
     background-color: #379a19;
-    width:504px;
     border:1px solid black;
     height: 450px;
     color: #379a19;
-    
     border:1px solid black; 
     border-radius: 10px;
 }
-  
-#loginform { padding-top:18px; }
-  
-    #loginform p { margin: 5px; }
   
 #chatbox {
     text-align:left;
