@@ -1,11 +1,12 @@
 .header{
     max-height: 120px;
+    background-color: #379A19;
     border-bottom: 1px solid grey;
 }
 .logo{
     position: relative;
     height: 120px;
-    width: 250px;
+    width: 300px;
    
 }
 .easychat{

@@ -5,7 +5,7 @@ form, p, span {
 input { font:12px arial; }
   
 a {
-    color: black;
+    color: white    ;
     text-decoration:none; }
   
     a:hover { text-decoration:underline; }
@@ -15,7 +15,7 @@ a {
     top: 40px;
     margin:0 auto;
     padding-bottom:25px;
-    background: lightblue;
+    background-color: #379a19;
     width:504px;
     border:1px solid black;
     height: 450px;
@@ -77,5 +77,5 @@ a {
 }
 ul li:nth-child(odd)
 {
-    background-color: lightgray;
+    background-color: #379a19;
 }
