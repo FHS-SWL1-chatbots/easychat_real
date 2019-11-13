@@ -23,7 +23,6 @@ export class ChatHistoryComponent implements OnInit {
     this.msgs.push(value);
     this.benutzername = this.pService.nickname;
     this.colorLi = {"color": this.pService.colorName};
-    alert(this.colorLi);
   }
   
 }
