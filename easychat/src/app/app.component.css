@@ -1,7 +1,7 @@
 
 #wrapper {
     position: relative;
-    top: 5%;
+    top: 4%;
     bottom: 60%;
     width: 100%;
     padding-bottom:25px;
@@ -10,5 +10,13 @@
     height: 100%;
     border:1px solid black; 
     border-radius: 10px;
+}
+
+.container {
+    border: 1px solid black;
+    height: 550px;
+    width: 100%;
+    margin: 0;
+    background-color: grey;
 }
   
