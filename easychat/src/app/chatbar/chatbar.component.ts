@@ -27,7 +27,6 @@ export class ChatbarComponent implements OnInit {
         this.pService.colorName = this.getRandomColor()
       }
       if (this.username != null) {
-        this.inputDisabled = true;
         this.pService.nickname = this.username;
       }
       this.msgEvent.emit(this.chatMsg);
