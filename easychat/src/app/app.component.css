@@ -1,7 +1,8 @@
 
 #wrapper {
     position: relative;
-    top: 20%;
+    top: 10%;
+    width: 100%;
     padding-bottom:25px;
     background: #379a19;
     border:1px solid black;

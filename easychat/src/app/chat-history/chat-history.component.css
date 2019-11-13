@@ -1,7 +1,8 @@
 
 #wrapper {
     position: relative;
-    top: 20%;
+    top: 10%;
+    width: 100%;
     padding-bottom:25px;
     background-color: #379a19;
     border:1px solid black;
@@ -14,11 +15,12 @@
 #chatbox {
     text-align:left;
     margin:0 auto;
-    margin-bottom:25px;
-    padding:10px;
+    margin-bottom:20px;
+    margin-left: 25px;
+    margin-right: 25px;
     background:#fff;
     height:230px;
-    width:430px;
+    widows: 100%;
     border:1px solid black;
     border-radius: 10px;
     overflow:auto;
@@ -29,18 +31,15 @@
     hyphens: auto; 
 }
   
-    #usermsg {
-        width:395px;
-        border:1px solid black;
-        position: relative;
-        left: 35px;
-     }
-    #submitmsg {
-      float: right;
-      margin-right: 12px;
-
-    
-    }
+#usermsg {
+    widows: 100%;
+    border:1px solid black;
+    position: relative;
+}
+#submitmsg {
+    float: right;
+    margin-right: 12px;
+}
   
 #submit { width: 60px; }
   
@@ -62,4 +61,9 @@
 ul li:nth-child(odd)
 {
     background-color: #379a19;
+}
+
+#textarea {
+    position: relative;
+
 }
