@@ -1,7 +1,6 @@
 .header{
     max-height: 120px;
     background-color: #379A19;
-    border-bottom: 1px solid grey;
 }
 .logo{
     position: relative;
@@ -21,4 +20,7 @@
     position: relative;
     top: 20%;
     right: 5%;
+}
+.container {
+    border-bottom: 1px solid white;
 }

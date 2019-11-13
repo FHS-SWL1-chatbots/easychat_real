@@ -2,29 +2,32 @@ form, p, span {
     margin:0;
     padding:0; }
   
-input { font:12px arial; }
+#username { font:12px arial; 
+    width: 130px;
+    height: 25px;
+    padding: 0px;
+}
   
 #usermsg {
-        width: 80%;
-        border:1px solid black;
-        position: relative;
-        left: 35px;
+    width: 100%;
+    margin-left: 15px;
+    border:1px solid black;
 }
 
 #submitmsg {
-    float: right;
-    margin-right: 12px;
     height: 40px;
-    width: 60px;
+    width: 80px;
+    border: 1px solid black;
 }
   
-.welcome { float:left; }
 
 .msgbefore{
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 15px;
     height: 30px;
 }
 label.msgbefore {
     color: white;
+}
+.container {
+    border: 1px solid black;
 }

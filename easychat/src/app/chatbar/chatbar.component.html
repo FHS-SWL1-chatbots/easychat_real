@@ -1,6 +1,21 @@
+<div class="container col-12">
 <form name="message" action="">
-    <label [hidden]="inputDisabled" class="msgbefore">Username:</label><input [hidden]="inputDisabled"  name="username" [(ngModel)]='username' maxlength="12" minlength="3" [disabled]="inputDisabled"/>
+    <div class="row">
+        <div class="col-3">
+    <label [hidden]="inputDisabled" class="msgbefore">Username:</label>
+        </div>
+        <div class="col-3">
+    <input id="username" [hidden]="inputDisabled"  name="username" [(ngModel)]='username' maxlength="12" minlength="3" [disabled]="inputDisabled"/>
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col-8">
     <textarea name="chatMsg" [(ngModel)]='chatMsg' (keyup.enter)="sendMsg()" maxlength="1000" minlength="1" type="text"
         id="usermsg" placeholder="Hier könnte deine Nachricht stehen." size="64" (keyup.enter)="sendMessage()"></textarea>
+        </div>
+        <div class="col-4">
     <input name="submitmsg" [disabled]="!chatMsg || !username" type="submit" id="submitmsg" value="Send" (click)="sendMsg()" />
+        </div>
+    </div>
 </form>
+</div>
