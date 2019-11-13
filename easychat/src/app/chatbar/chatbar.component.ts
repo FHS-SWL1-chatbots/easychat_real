@@ -15,7 +15,7 @@ export class ChatbarComponent implements OnInit {
   }
   public chatMsg: string;
   public username: string;
-  public inputDisabled: boolean = false;
+  public inputColor: boolean = false;
 
   @Output() msgEvent = new EventEmitter<string>();
 
@@ -23,8 +23,9 @@ export class ChatbarComponent implements OnInit {
 
     //"^([a-z]|[A-Z]|[ä,ö,ü,Ä,Ö,Ü,ç,è,é,à]|[0-9])#%&*$"
     if (this.username.match("^[a-zA-Z0-9._\-]{3,12}$")) {
-      if(this.inputDisabled != true){
+      if(this.inputColor != true){
         this.pService.colorName = this.getRandomColor()
+        this.inputColor = true;
       }
       if (this.username != null) {
         this.pService.nickname = this.username;
