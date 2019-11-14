@@ -3,7 +3,7 @@ form, p, span {
     padding:0; }
   
 #username { font:12px arial; 
-    width: 200px;
+    width: 30%;
     height: 30px;
     padding: 0px;
 }
@@ -16,7 +16,7 @@ form, p, span {
 
 #submitmsg {
     height: 40px;
-    width: 80px;
+    width: 100%;
     border: 1px solid black;
 }
   
