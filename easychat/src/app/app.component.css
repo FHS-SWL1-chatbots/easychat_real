@@ -5,18 +5,16 @@
     bottom: 60%;
     width: 100%;
     padding-bottom:25px;
-    background: #379a19;
-    border:1px solid black;
-    height: 100%;
-    border:1px solid black; 
+    background: #38cf24;
+    border:1px solid white;
+    height: 100%; 
     border-radius: 10px;
 }
 
 .container {
-    border: 1px solid black;
     height: 550px;
     width: 100%;
     margin: 0;
-    background-color: grey;
+    background-color:#1d5516;
 }
   

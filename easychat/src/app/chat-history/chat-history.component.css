@@ -32,17 +32,6 @@
     hyphens: auto; 
 }
   
-#usermsg {
-    widows: 100%;
-    border:1px solid black;
-    position: relative;
-}
-#submitmsg {
-    float: right;
-    margin-right: 12px;
-}
-  
-#submit { width: 60px; }
   
 .error { color: #ff0000; }
   

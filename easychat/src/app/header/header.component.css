@@ -1,7 +1,6 @@
 .header{
     max-height: 120px;
     background-color: #379A19;
-    border-bottom: 1px solid grey;
 }
 .logo{
     position: relative;
@@ -43,3 +42,6 @@
     from, to { border-color: transparent }
     50% { border-color: orange; }
   }
+.container {
+    border-bottom: 1px solid white;
+}
