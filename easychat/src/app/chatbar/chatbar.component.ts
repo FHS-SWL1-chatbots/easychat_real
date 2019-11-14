@@ -27,15 +27,16 @@ export class ChatbarComponent implements OnInit {
         this.pService.colorName = this.getRandomColor()
         this.inputColor = true;
       }
-      if (this.username != null) {
+      if (this.username != this.pService.nickname) {
         this.pService.nickname = this.username;
+        alert("Der Benutzername wurde gesetzt oder geändert!");
       }
       this.msgEvent.emit(this.chatMsg);
       this.chatMsg = '';
       this.chatMsg = this.chatMsg.trim();
       this.chatMsg.match("/\s/");
     } else {
-      alert("Dieser Nutzername ist nicht erlaubt!");
+      alert("Dieser Nutzername ist nicht erlaubt! Erlaubte Zeichen: a-z A-Z . - _ ");
     }
 
   }
