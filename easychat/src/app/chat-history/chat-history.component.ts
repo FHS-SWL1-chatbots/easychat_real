@@ -21,9 +21,15 @@ export class ChatHistoryComponent implements OnInit {
   public colorLi: Object;
 
   saveMsg(value: String){
+    this.username = this.pService.nickname;
+    if(this.pService.statusNickname==true){
+      this.msgs.push("User "+this.pService.oldNickname+ " hat seinen Namen in "+this.pService.nickname+" geändert.")
+      this.benutzername.push(this.pService.nickname);
+      this.pService.statusNickname=false;
+    }
+
     this.msgs.push(value);
     this.benutzername.push(this.pService.nickname);
-    this.username = this.pService.nickname;
     this.colorLi = {"color": this.pService.colorName};
   }
   

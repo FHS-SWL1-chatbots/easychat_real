@@ -28,8 +28,11 @@ export class ChatbarComponent implements OnInit {
         this.inputColor = true;
       }
       if (this.username != this.pService.nickname) {
+        if(this.pService.nickname != ""){
+          this.pService.oldNickname = this.pService.nickname
+          this.pService.statusNickname = true;
+        }
         this.pService.nickname = this.username;
-        alert("Der Benutzername wurde gesetzt oder geändert!");
       }
       this.msgEvent.emit(this.chatMsg);
       this.chatMsg = '';
