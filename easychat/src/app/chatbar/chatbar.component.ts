@@ -32,6 +32,9 @@ export class ChatbarComponent implements OnInit {
           this.pService.oldNickname = this.pService.nickname
           this.pService.statusNickname = true;
         }
+        else{
+          this.pService.createMessage(this.username,"ist dem Chatroom beigetreten.")
+        }
         this.pService.nickname = this.username;
       }
       this.msgEvent.emit(this.chatMsg);

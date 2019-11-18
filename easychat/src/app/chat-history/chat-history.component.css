@@ -57,3 +57,7 @@ ul li:nth-child(odd)
     position: relative;
 
 }
+.datetag{
+    font-size: 10px;
+    color: lightslategrey;
+}
