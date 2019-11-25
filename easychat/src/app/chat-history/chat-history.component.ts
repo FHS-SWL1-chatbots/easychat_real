@@ -15,10 +15,8 @@ export class ChatHistoryComponent implements OnInit {
   ngOnInit() {
   }
 
-  public msgs: String[] = [];
-  public benutzername: String[] = [];
-  public dates: number[]=[];
   public username: String ="";
+  public messages: Object[];
   public colorLi: Object;
 
   saveMsg(value: string){
@@ -27,11 +25,8 @@ export class ChatHistoryComponent implements OnInit {
       this.pService.createMessage(this.pService.nickname,"User "+this.pService.oldNickname+ " hat seinen Namen in "+this.pService.nickname+" geändert.")
       this.pService.statusNickname=false;
     }
-   this.pService.createMessage(this.pService.nickname, value);
-
-    this.msgs = this.pService.msgsArray;
-    this.benutzername = this.pService.usernameArray;
-    this.dates = this.pService.datesArray;
+    this.pService.createMessage(this.pService.nickname, value);
+    this.messages = this.pService.messagesArray;
     this.colorLi = {"color": this.pService.colorName};
   }
   

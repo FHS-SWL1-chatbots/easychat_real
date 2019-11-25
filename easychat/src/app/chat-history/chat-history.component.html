@@ -5,6 +5,6 @@
 
 <div id="chatbox" #runter [scrollTop]="runter.scrollHeight">
     <ul class="list-group" >
-        <li *ngFor="let msg of msgs; let i = index" class="list-group-item"><p [ngStyle]="colorLi"><strong>{{benutzername[i]}}:</strong></p> {{msg}} <span class="datetag">{{dates[i]|date:'d/M/yy h:mm a'}}</span></li>
+        <li *ngFor="let msg of messages; let i = index" class="list-group-item"><p [ngStyle]="colorLi"><strong>{{msg.username}}:</strong></p> {{msg.message}} <span class="datetag">{{msg.date|date:'d/M/yy HH:mm '}}</span></li>
     </ul>
 </div>

@@ -11,9 +11,7 @@ export class PersonService {
   private myOldNickname: string = '';
   private statusNicknameChange: boolean = false;
   private nicknameColor: string = '';
-  private msgs: string[] = [];
-  private benutzername: string[] = [];
-  private dates: number[] = [];
+  private messages: object[] =[];
 
 
   public get nickname(): string{
@@ -41,23 +39,19 @@ export class PersonService {
   public set colorName(value: string){
     this.nicknameColor = value;
   }
-  public get msgsArray(): string[]{
-    return this.msgs;
-  }
-  public get usernameArray(): string[]{
-    return this.benutzername;
-  }
-  public get datesArray(): number[]{
-    return this.dates;
+
+  public get messagesArray(): object[]{
+    return this.messages;
   }
 
 
-  /**
-   * name
-   */
   public createMessage(username: string, msg: string) {
-      this.msgs.push(msg);
-      this.benutzername.push(username);
-      this.dates.push(Math.floor(Date.now()));  
+      this.messages.push({
+          "color": this.colorName,
+          "username": username,
+          "message": msg,
+          "date":Math.floor(Date.now())
+      });
+      
   }
 }

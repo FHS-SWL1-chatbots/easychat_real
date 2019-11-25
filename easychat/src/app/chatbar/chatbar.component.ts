@@ -38,9 +38,6 @@ export class ChatbarComponent implements OnInit {
         this.pService.nickname = this.username;
       }
       this.msgEvent.emit(this.chatMsg);
-      this.chatMsg = '';
-      this.chatMsg = this.chatMsg.trim();
-      this.chatMsg.match("/\s/");
     } else {
       alert("Dieser Nutzername ist nicht erlaubt! Erlaubte Zeichen: a-z A-Z . - _ ");
     }
