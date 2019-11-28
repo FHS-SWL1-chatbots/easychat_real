@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { PersonService} from '../person.service';
 import { ChatService} from '../chat.service';
 import { Message } from '../message';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-chat-history',
@@ -18,7 +19,8 @@ export class ChatHistoryComponent implements OnInit {
   }
 
   public username: String ="";
-  public messages: Object[];
+  public messages: Observable<Array<Message>>;
+  public msgs: Object[];
   public colorLi: Object;
 
   saveMsg(value: string){
@@ -33,7 +35,10 @@ export class ChatHistoryComponent implements OnInit {
       }
     )
     this.pService.createMessage(this.pService.nickname, value);
-    this.messages = this.pService.messagesArray;
+    console.log(this.chatService.getHistory());
+    this.msgs = this.pService.messagesArray;
+    this.messages = this.chatService.getHistory();
+
     this.colorLi = {"color": this.pService.colorName};
   }
   

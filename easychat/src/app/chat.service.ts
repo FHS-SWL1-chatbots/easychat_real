@@ -18,8 +18,7 @@ export class ChatService {
     return this.http.post<Message>(this.actionUrl, message, options);
   }
 
-  public getHistory(){
-    return this.http.get(this.actionUrl);
+  public getHistory(): Observable<Array<Message>>{
+      return this.http.get<Array<Message>>(this.actionUrl);
+    }
   }
-
-}
