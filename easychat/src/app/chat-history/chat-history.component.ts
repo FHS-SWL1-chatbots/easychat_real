@@ -22,14 +22,16 @@ export class ChatHistoryComponent implements OnInit {
   public messages: Message[];
   public msgs: Object[];
   public colorLi: Object;
+  private alert: string;
 
   saveMsg(value: string){
     this.username = this.pService.nickname;
     if(this.pService.statusNickname==true){
-      this.pService.createMessage(this.pService.nickname,"User "+this.pService.oldNickname+ " hat seinen Namen in "+this.pService.nickname+" geändert.")
+      this.alert ="User "+this.pService.oldNickname+ " hat seinen Namen in "+this.pService.nickname+" geändert.";
+      this.chatService.addToHistory(new Message(this.pService.nickname,this.alert,new Date(), this.pService.colorName));
       this.pService.statusNickname=false;
     }
-    this.chatService.addToHistory(new Message(this.pService.nickname,value, new Date())).subscribe(
+    this.chatService.addToHistory(new Message(this.pService.nickname, value, new Date(), this.pService.colorName)).subscribe(
       (response:Message) => {
         console.log('REST server gave back ' + response);
       }
@@ -37,11 +39,18 @@ export class ChatHistoryComponent implements OnInit {
     this.pService.createMessage(this.pService.nickname, value);
     console.log(this.chatService.getHistory());
     this.msgs = this.pService.messagesArray;
-    this.chatService.getHistory().subscribe((response: Message[]) => {
-      this.messages =response;
-    });
-
+    
+     
     this.colorLi = {"color": this.pService.colorName};
   }
+
+  x = setInterval(()=>{
+    this.chatService.getHistory().subscribe((response: Message[]) => {
+    this.messages =response;
+    if (this.messages.length >16){
+      this.messages.splice(0,this.messages.length-15);
+    }
+  })
   
+},2000);
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonService } from '../person.service';
+import { ChatService } from '../chat.service';
+import { Message } from '../message';
 
 @Component({
   selector: 'app-chatbar',
@@ -9,14 +11,14 @@ import { PersonService } from '../person.service';
 export class ChatbarComponent implements OnInit {
   ngOnInit() {
   }
-  constructor(public pService: PersonService) {
+  constructor(public pService: PersonService, public chatService: ChatService) {
 
 
   }
   public chatMsg: string;
   public username: string;
   public inputColor: boolean = false;
-
+  public alert:string;
   @Output() msgEvent = new EventEmitter<string>();
 
   sendMsg(): void {
@@ -33,7 +35,8 @@ export class ChatbarComponent implements OnInit {
           this.pService.statusNickname = true;
         }
         else{
-          this.pService.createMessage(this.username,"ist dem Chatroom beigetreten.")
+          this.alert="ist dem Chatroom beigetreten.";
+          this.chatService.addToHistory(new Message(this.username,this.alert, new Date(), this.pService.colorName));
         }
         this.pService.nickname = this.username;
       }
