@@ -18,7 +18,7 @@ export class ChatbarComponent implements OnInit {
   public chatMsg: string;
   public username: string;
   public inputColor: boolean = false;
-
+  public alert:string;
   @Output() msgEvent = new EventEmitter<string>();
 
   sendMsg(): void {
@@ -35,7 +35,8 @@ export class ChatbarComponent implements OnInit {
           this.pService.statusNickname = true;
         }
         else{
-          this.chatService.addToHistory(new Message(this.username,"ist dem Chatroom beigetreten.", new Date(), this.pService.colorName));
+          this.alert="ist dem Chatroom beigetreten.";
+          this.chatService.addToHistory(new Message(this.username,this.alert, new Date(), this.pService.colorName));
         }
         this.pService.nickname = this.username;
       }
