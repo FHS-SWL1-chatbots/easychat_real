@@ -19,7 +19,7 @@ export class ChatHistoryComponent implements OnInit {
   }
 
   public username: String ="";
-  public messages: Observable<Array<Message>>;
+  public messages: Message[];
   public msgs: Object[];
   public colorLi: Object;
 
@@ -37,7 +37,9 @@ export class ChatHistoryComponent implements OnInit {
     this.pService.createMessage(this.pService.nickname, value);
     console.log(this.chatService.getHistory());
     this.msgs = this.pService.messagesArray;
-    this.messages = this.chatService.getHistory();
+    this.chatService.getHistory().subscribe((response: Message[]) => {
+      this.messages =response;
+    });
 
     this.colorLi = {"color": this.pService.colorName};
   }
