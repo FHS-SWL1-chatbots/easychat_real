@@ -22,7 +22,7 @@ export class ChatbarComponent implements OnInit {
   sendMsg(): void {
 
     //"^([a-z]|[A-Z]|[ä,ö,ü,Ä,Ö,Ü,ç,è,é,à]|[0-9])#%&*$"
-    if (this.username.match("^[a-zA-Z0-9]{3,12}[._-|&|%|*|\S]{3}")) {
+    if (this.username.match("^[a-zA-Z0-9]{3,12}[._-|&|%|\S]{3}")) {
       if(this.inputColor != true){
         this.pService.colorName = this.getRandomColor()
         this.inputColor = true;
@@ -40,7 +40,7 @@ export class ChatbarComponent implements OnInit {
       this.msgEvent.emit(this.chatMsg);
       this.chatMsg = '';
     } else {
-      alert("Dieser Nutzername ist nicht erlaubt! Sonderzeichen bitte mit normalen Buchstaben ergänzen. Spaces sind im Nutzernamen nicht erlaubt.");
+      alert("Dieser Nutzername ist nicht erlaubt! Sonderzeichen bitte mit normalen Buchstaben ergänzen. Spaces sind im Nutzernamen sind nicht erlaubt.");
     }
 
   }
