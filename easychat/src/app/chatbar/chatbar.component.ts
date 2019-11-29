@@ -36,7 +36,11 @@ export class ChatbarComponent implements OnInit {
         }
         else{
           this.alert="ist dem Chatroom beigetreten.";
-          this.chatService.addToHistory(new Message(this.username,this.alert, new Date(), this.pService.colorName));
+          this.chatService.addToHistory(new Message(this.username, this.alert, new Date(), this.pService.colorName)).subscribe(
+            (response:Message) => {
+              console.log('REST server gave back ' + response);
+            }
+          )
         }
         this.pService.nickname = this.username;
       }

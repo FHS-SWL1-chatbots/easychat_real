@@ -28,7 +28,11 @@ export class ChatHistoryComponent implements OnInit {
     this.username = this.pService.nickname;
     if(this.pService.statusNickname==true){
       this.alert ="User "+this.pService.oldNickname+ " hat seinen Namen in "+this.pService.nickname+" geändert.";
-      this.chatService.addToHistory(new Message(this.pService.nickname,this.alert,new Date(), this.pService.colorName));
+      this.chatService.addToHistory(new Message(this.pService.nickname, this.alert, new Date(), this.pService.colorName)).subscribe(
+        (response:Message) => {
+          console.log('REST server gave back ' + response);
+        }
+      )
       this.pService.statusNickname=false;
     }
     this.chatService.addToHistory(new Message(this.pService.nickname, value, new Date(), this.pService.colorName)).subscribe(
@@ -36,12 +40,6 @@ export class ChatHistoryComponent implements OnInit {
         console.log('REST server gave back ' + response);
       }
     )
-    this.pService.createMessage(this.pService.nickname, value);
-    console.log(this.chatService.getHistory());
-    this.msgs = this.pService.messagesArray;
-    
-     
-    this.colorLi = {"color": this.pService.colorName};
   }
 
   x = setInterval(()=>{
