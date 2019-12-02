@@ -2,10 +2,10 @@
 <form name="message" action="">
     <div class="row">
         <div class="col-4 col-sm-4 col-lg-4">
-    <label [hidden]="inputDisabled" class="msgbefore">Username:</label>
+    <label class="msgbefore">Username:</label>
         </div>
         <div class="col-8 col-sm-8 col-lg-8">
-    <input id="username" class="form-control" [hidden]="inputDisabled"  name="username" [(ngModel)]='username' maxlength="12" minlength="3" [disabled]="inputDisabled"/>
+    <input id="username" class="form-control"  name="username" [(ngModel)]='username' maxlength="12" minlength="3" [disabled]="inputDisabled"/>
         </div>    
     </div>
     <div class="row">
