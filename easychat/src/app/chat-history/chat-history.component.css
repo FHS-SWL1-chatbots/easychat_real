@@ -61,3 +61,6 @@ ul li:nth-child(odd)
     font-size: 10px;
     color: lightslategrey;
 }
+li p{
+    margin-bottom: 0;
+}

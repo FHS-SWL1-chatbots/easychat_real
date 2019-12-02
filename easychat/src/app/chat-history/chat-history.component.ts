@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PersonService} from '../person.service';
-import { ChatService} from '../chat.service';
+import { PersonService } from '../person.service';
+import { ChatService } from '../chat.service';
 import { Message } from '../message';
 import { Observable } from 'rxjs';
 
@@ -18,37 +18,36 @@ export class ChatHistoryComponent implements OnInit {
   ngOnInit() {
   }
 
-  public username: String ="";
+  public username: String = "";
   public messages: Message[];
   public msgs: Object[];
   public colorLi: Object;
   private alert: string;
 
-  saveMsg(value: string){
+  saveMsg(value: string) {
     this.username = this.pService.nickname;
-    if(this.pService.statusNickname==true){
-      this.alert ="User "+this.pService.oldNickname+ " hat seinen Namen in "+this.pService.nickname+" geändert.";
+    if (this.pService.statusNickname == true) {
+      this.alert = "User " + this.pService.oldNickname + " hat seinen Namen in " + this.pService.nickname + " geändert.";
       this.chatService.addToHistory(new Message(this.pService.nickname, this.alert, new Date(), this.pService.colorName)).subscribe(
-        (response:Message) => {
+        (response: Message) => {
           console.log('REST server gave back ' + response);
         }
-      )
-      this.pService.statusNickname=false;
+      );
+      this.pService.statusNickname = false;
     }
     this.chatService.addToHistory(new Message(this.pService.nickname, value, new Date(), this.pService.colorName)).subscribe(
-      (response:Message) => {
+      (response: Message) => {
         console.log('REST server gave back ' + response);
       }
     )
   }
 
-  x = setInterval(()=>{
+  x = setInterval(() => {
     this.chatService.getHistory().subscribe((response: Message[]) => {
-    this.messages =response;
-    if (this.messages.length >16){
-      this.messages.splice(0,this.messages.length-15);
-    }
-  })
-  
-},2000);
+      this.messages = response;
+      if (this.messages.length > 16) {
+        this.messages.splice(0, this.messages.length - 15);
+      }
+    })
+  }, 2000);
 }
