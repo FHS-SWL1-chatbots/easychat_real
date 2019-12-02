@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-8">
     <textarea name="chatMsg" [(ngModel)]='chatMsg' (keyup.enter)="sendMsg()" maxlength="1000" minlength="1" type="text"
-        id="usermsg" class="form-control"  placeholder="Hier könnte deine Nachricht stehen." size="64" (keyup.enter)="sendMessage()"></textarea>
+        id="usermsg" class="form-control"  placeholder="Hier könnte deine Nachricht stehen." size="64" ></textarea>
         </div>
         <div class="col-4">
     <input name="submitmsg" class="btn btn-secondary" [disabled]="!chatMsg || !username" type="submit" id="submitmsg" value="Send" (click)="sendMsg()" />
