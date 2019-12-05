@@ -2,10 +2,16 @@
     position: fixed;
     bottom: 0%;
     width: 100%;
-    min-height: 60px;
-    max-height: 60px;
+    min-height: 40px;
+    max-height: 40px;
     background-color: #379a19;
+    border-top: 1px solid white;
+}
+
+#footertext {
+    position: fixed;
+    bottom: 10px;
     text-align: center;
     color: white;
-    border-top: 1px solid white;
+    left: 45%;
 }

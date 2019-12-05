@@ -2,19 +2,18 @@
 #wrapper {
     position: relative;
     top: 4%;
-    bottom: 60%;
     width: 100%;
     padding-bottom:25px;
     background:  #379A19;
     border:1px solid white;
-    height: 100%; 
+    height: auto; 
     border-radius: 10px;
 }
 
 .container {
-    height: 550px;
+    height: 600px;
     width: 100%;
     margin: 0;
     background-color:#c9e9c5;
+    padding: 0%;
 }
-  
