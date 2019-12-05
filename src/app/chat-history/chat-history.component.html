@@ -5,6 +5,6 @@
 
 <div id="chatbox" #runter [scrollTop]="runter.scrollHeight">
     <ul class="list-group">
-        <li *ngFor="let msg of messages; let i = index"  class="list-group-item"><p [style.color]="msg.color"><strong *ngIf="msg.username && (!messages[i-1] || messages[i-1].username !== msg.username)">{{msg.username}}:</strong></p> {{msg.content}} <span class="datetag">{{msg.timestamp|date:"d. MMMM yyyy HH:mm 'Uhr'"}}</span></li>
+        <li *ngFor="let msg of messages; let i = index"  class="list-group-item" [ngClass]="{'textright' : msg.username == pService.nickname}" ><p  [style.color]="msg.color"><strong *ngIf="msg.username && (!messages[i-1] || messages[i-1].username !== msg.username)">{{msg.username}}:</strong></p> {{msg.content}} <span class="datetag">{{msg.timestamp|date:"d. MMMM yyyy HH:mm 'Uhr'"}}</span></li>
     </ul>
 </div>

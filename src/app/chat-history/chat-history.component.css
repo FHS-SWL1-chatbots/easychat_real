@@ -64,3 +64,7 @@ ul li:nth-child(odd)
 li p{
     margin-bottom: 0;
 }
+
+.textright{
+    text-align: right;
+}
