@@ -19,32 +19,37 @@ export class ChatbarComponent implements OnInit {
   public chatMsg: string;
   public username: string;
   public inputColor: boolean = false;
-  public alert:string;
+  public alert: string;
   @Output() msgEvent = new EventEmitter<string>();
 
   sendMsg(): void {
 
     //"^([a-z]|[A-Z]|[ä,ö,ü,Ä,Ö,Ü,ç,è,é,à]|[0-9])#%&*$"
     if (this.username.match("^[a-zA-Z0-9äöü]{2,12}[._-|&|%|\S]{1,2}")) {
-      if(this.inputColor != true){
+      if (this.inputColor != true) {
         this.pService.colorName = this.getRandomColor()
         this.inputColor = true;
       }
       if (this.username != this.pService.nickname) {
-        if(this.pService.nickname != ""){
+        if (this.pService.nickname != "") {
           this.pService.oldNickname = this.pService.nickname
           this.pService.statusNickname = true;
         }
-        else{
-          this.alert="ist dem Chatroom beigetreten.";
+        else {
+          this.alert = "ist dem Chatroom beigetreten.";
           this.chatService.addToHistory(new Message(this.username, this.alert, new Date(), this.pService.colorName)).subscribe(
-            (response:Message) => {
+            (response: Message) => {
+              console.log('REST server gave back ' + response);
+            }
+          )
+          this.chatService.addUsername(new Username(this.username, null, this.pService.colorName)).subscribe(
+            (response: Username) => {
               console.log('REST server gave back ' + response);
             }
           )
         }
         this.pService.nickname = this.username;
-        this.chatService.addUsername(new Username(this.username, 0, this.pService.colorName));
+        
       }
       this.msgEvent.emit(this.chatMsg);
       this.chatMsg = '';

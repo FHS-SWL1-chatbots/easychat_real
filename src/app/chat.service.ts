@@ -11,7 +11,7 @@ export class ChatService {
   constructor(private http: HttpClient) { }
 
   actionUrl = 'https://group4easychatapi.herokuapp.com/api/history';
-  actionUrlUsername = 'https://group4easychatapi.herokuapp.com/api/usernames'
+  actionUrlUsername = 'https://group4easychatapi.herokuapp.com/api/usernames';
 
   public addToHistory(message: Message): Observable<Message> {
     const options = {
@@ -27,8 +27,13 @@ export class ChatService {
     const options = {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
     };
-
-    return this.http.post<Username>(this.actionUrlUsername, Username, options);
+    return this.http.post<Username>(this.actionUrlUsername, username, options);
+  }
+  public changeUsername(changeusername: Object): Observable<Object> {
+    const options = {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    };
+    return this.http.post<Object>('https://group4easychatapi.herokuapp.com/api/changeusername', changeusername, options );
   }
   public getUsernames(): Observable<Array<Username>> {
     return this.http.get<Array<Username>>(this.actionUrlUsername);

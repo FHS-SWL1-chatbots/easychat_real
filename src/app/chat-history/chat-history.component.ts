@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { PersonService } from '../person.service';
 import { ChatService } from '../chat.service';
 import { Message } from '../message';
+import { Username } from '../username';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -27,6 +28,15 @@ export class ChatHistoryComponent implements OnInit {
   saveMsg(value: string) {
     this.username = this.pService.nickname;
     if (this.pService.statusNickname == true) {
+
+      //Ändert den Nickname im Array
+      console.log({ "usernameold": this.pService.oldNickname, "username": this.pService.nickname });
+      this.chatService.changeUsername({ "usernameold": this.pService.oldNickname, "username": this.pService.nickname }).subscribe(
+        (response: Object) => {
+          console.log('REST server gave back ' + response);
+        }
+      )
+      //Fügt die Nachricht Benutzername geändert hinzu. 
       this.alert = "User " + this.pService.oldNickname + " hat seinen Namen in " + this.pService.nickname + " geändert.";
       this.chatService.addToHistory(new Message(this.pService.nickname, this.alert, new Date(), this.pService.colorName)).subscribe(
         (response: Message) => {

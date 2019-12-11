@@ -1,1 +1,6 @@
-<h1>current user:</h1>>
+<div class="box">
+    <p>Users:</p>
+    <ul class="list-group">
+            <li *ngFor="let user of usernames; let i = index"  class="list-group-item" [style.color]="user.color">{{user.username}}</li>
+    </ul>
+</div>
