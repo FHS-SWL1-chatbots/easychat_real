@@ -3,7 +3,7 @@ import { PersonService } from '../person.service';
 import { ChatService } from '../chat.service';
 import { Message } from '../message';
 import { Username } from '../username';
-import { Observable } from 'rxjs';
+import { Observable, ObjectUnsubscribedError } from 'rxjs';
 
 @Component({
   selector: 'app-chat-history',
@@ -24,6 +24,7 @@ export class ChatHistoryComponent implements OnInit {
   public msgs: Object[];
   public colorLi: Object;
   private alert: string;
+  private historysize: Object = null;
 
   saveMsg(value: string) {
     this.username = this.pService.nickname;
@@ -53,11 +54,20 @@ export class ChatHistoryComponent implements OnInit {
   }
 
   x = setInterval(() => {
-    this.chatService.getHistory().subscribe((response: Message[]) => {
-      this.messages = response;
-      if (this.messages.length > 16) {
-        this.messages.splice(0, this.messages.length - 15);
-      }
+    this.chatService.getHistoryLength().subscribe((response: Object) => {
+      this.historysize = response;
     })
+
+    if (JSON.stringify(this.historysize) === JSON.stringify(this.chatService.localhistorylength)) {
+    }else{
+      this.chatService.getHistory().subscribe((response: Message[]) => {
+        this.messages = response;
+        if (this.messages.length > 16) {
+          this.messages.splice(0, this.messages.length - 15);
+        }
+      })
+      this.chatService.localhistorylength = this.historysize;
+    }
+
   }, 2000);
 }

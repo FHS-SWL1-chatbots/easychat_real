@@ -12,6 +12,14 @@ export class ChatService {
 
   actionUrl = 'https://group4easychatapi.herokuapp.com/api/history';
   actionUrlUsername = 'https://group4easychatapi.herokuapp.com/api/usernames';
+  private localHistoryLength: Object;
+
+  public get localhistorylength(): Object{
+    return this.localHistoryLength;
+  }
+  public set localhistorylength(value: Object){
+    this.localHistoryLength = value;
+  }
 
   public addToHistory(message: Message): Observable<Message> {
     const options = {
@@ -37,5 +45,8 @@ export class ChatService {
   }
   public getUsernames(): Observable<Array<Username>> {
     return this.http.get<Array<Username>>(this.actionUrlUsername);
+  }
+  public getHistoryLength(): Observable<Object>{
+    return this.http.get<Object>('https://group4easychatapi.herokuapp.com/api/historylength');
   }
 }
