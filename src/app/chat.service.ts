@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Message } from './message';
+import { Username} from './username';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class ChatService {
   constructor(private http: HttpClient) { }
 
   actionUrl = 'https://group4easychatapi.herokuapp.com/api/history';
+  actionUrlUsername = 'https://group4easychatapi.herokuapp.com/api/usernames'
 
   public addToHistory(message: Message): Observable<Message> {
     const options = {
@@ -18,8 +20,17 @@ export class ChatService {
 
     return this.http.post<Message>(this.actionUrl, message, options);
   }
-
   public getHistory(): Observable<Array<Message>> {
     return this.http.get<Array<Message>>(this.actionUrl);
+  }
+  public addUsername(username: Username): Observable<Username> {
+    const options = {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    };
+
+    return this.http.post<Username>(this.actionUrlUsername, Username, options);
+  }
+  public getUsernames(): Observable<Array<Username>> {
+    return this.http.get<Array<Username>>(this.actionUrlUsername);
   }
 }

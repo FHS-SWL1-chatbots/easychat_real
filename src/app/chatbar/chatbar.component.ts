@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonService } from '../person.service';
 import { ChatService } from '../chat.service';
 import { Message } from '../message';
+import { Username } from '../username';
 
 @Component({
   selector: 'app-chatbar',
@@ -43,6 +44,7 @@ export class ChatbarComponent implements OnInit {
           )
         }
         this.pService.nickname = this.username;
+        this.chatService.addUsername(new Username(this.username, 0, this.pService.colorName));
       }
       this.msgEvent.emit(this.chatMsg);
       this.chatMsg = '';

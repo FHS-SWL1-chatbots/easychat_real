@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ChatbarComponent } from './chatbar/chatbar.component';
 import { from } from 'rxjs';
 import { ChatHistoryComponent } from './chat-history/chat-history.component';
+import { UsernamehistoryComponent } from './usernamehistory/usernamehistory.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ChatHistoryComponent } from './chat-history/chat-history.component';
     HeaderComponent,
     FooterComponent,
     ChatbarComponent,
-    ChatHistoryComponent
+    ChatHistoryComponent,
+    UsernamehistoryComponent
   ],
   imports: [
     BrowserModule,
